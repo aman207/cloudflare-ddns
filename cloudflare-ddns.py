@@ -89,7 +89,7 @@ def getIPs():
         requests.packages.urllib3.util.connection.HAS_IPV6 = True
         try:
             aaaa = requests.get(
-                "https://[2606:4700:4700::1111]/cdn-cgi/trace").text.split("\n")
+                "https://www.cloudflare.com/cdn-cgi/trace").text.split("\n")
             aaaa.pop()
             aaaa = dict(s.split("=") for s in aaaa)["ip"]
         except Exception:
