@@ -61,7 +61,7 @@ def getIPs():
     global ipv6_enabled
     global purgeUnknownRecords
     if ipv4_enabled:
-	requests.packages.urllib3.util.connection.HAS_IPV6 = False
+        requests.packages.urllib3.util.connection.HAS_IPV6 = False
         try:
             a = requests.get(
                 "https://www.cloudflare.com/cdn-cgi/trace").text.split("\n")
@@ -86,7 +86,7 @@ def getIPs():
                 if purgeUnknownRecords:
                     deleteEntries("A")
     if ipv6_enabled:
-	requests.packages.urllib3.util.connection.HAS_IPV6 = True
+        requests.packages.urllib3.util.connection.HAS_IPV6 = True
         try:
             aaaa = requests.get(
                 "https://[2606:4700:4700::1111]/cdn-cgi/trace").text.split("\n")
