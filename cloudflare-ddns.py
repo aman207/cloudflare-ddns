@@ -60,7 +60,7 @@ def getIPs():
     if ipv4_enabled:
         try:
             a = requests.get(
-                "https://1.1.1.1/cdn-cgi/trace").text.split("\n")
+                "https://www.cloudflare.com/cdn-cgi/trace").text.split("\n")
             a.pop()
             a = dict(s.split("=") for s in a)["ip"]
         except Exception:
